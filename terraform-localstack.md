@@ -1,8 +1,4 @@
-## 🪴 Title: Learn Terraform with LocalStack — No AWS Account Needed!
-
-### 💡 Goal
-
-You’ll learn how to:
+## Learn Terraform with LocalStack — No AWS Account Needed!
 
 - Write a simple **Terraform script (`main.tf`)**
 - Use **LocalStack** as a fake AWS
@@ -10,7 +6,7 @@ You’ll learn how to:
 
 ---
 
-## 🧱 Step 1: Prerequisites
+## Step 1: Prerequisites
 
 Before starting, install the following tools:
 
@@ -21,12 +17,12 @@ Before starting, install the following tools:
 | AWS CLI    | Test and interact with LocalStack | `brew install awscli`                               |
 | LocalStack | Fake AWS services locally         | `pip install localstack`                            |
 
-> 🧠 **Tip:** Check installation with
+> **Tip:** Check installation with
 > `terraform -v`, `aws --version`, and `localstack --version`.
 
 ---
 
-## ⚙️ Step 2: Start LocalStack
+## Step 2: Start LocalStack
 
 Run this in your terminal:
 
@@ -51,7 +47,7 @@ That’s your **fake AWS endpoint**.
 
 ---
 
-## 🪄 Step 3: Create the Terraform configuration
+## Step 3: Create the Terraform configuration
 
 Create a new folder:
 
@@ -64,7 +60,7 @@ Then create a file named **`main.tf`**:
 
 ---
 
-### 🧩 `main.tf`
+### `main.tf`
 
 ```hcl
 ##############################################
@@ -118,7 +114,7 @@ output "bucket_name" {
 
 ---
 
-## 🧠 Step 4: Understand the configuration
+## Step 4: Understand the configuration
 
 | Block                       | Description                                                                        |
 | --------------------------- | ---------------------------------------------------------------------------------- |
@@ -131,7 +127,7 @@ output "bucket_name" {
 
 ---
 
-## ⚡ Step 5: Initialize and apply Terraform
+## Step 5: Initialize and apply Terraform
 
 Run these commands:
 
@@ -153,7 +149,7 @@ Apply complete! Resources: 1 added.
 
 ---
 
-## 🔍 Step 6: Verify with AWS CLI
+## Step 6: Verify with AWS CLI
 
 Run this command to see your S3 buckets inside LocalStack:
 
@@ -182,7 +178,7 @@ aws --endpoint-url=http://localhost:4566 s3 ls s3://localstack-demo-bucket/
 
 ---
 
-## 🧹 Step 7: Clean up
+## Step 7: Clean up
 
 Destroy your fake AWS infrastructure:
 
@@ -198,20 +194,20 @@ localstack stop
 
 ---
 
-## 🧭 Test Phase Summary
+## Test Phase Summary
 
-| Step                | Command                                          | What It Does                |
-| ------------------- | ------------------------------------------------ | --------------------------- |
-| ✅ Start LocalStack | `localstack start`                               | Launches local AWS emulator |
-| ⚙️ Init Terraform   | `terraform init`                                 | Downloads providers         |
-| 🧠 Plan             | `terraform plan`                                 | Previews changes            |
-| 🚀 Apply            | `terraform apply`                                | Creates resources           |
-| 🔍 Test             | `aws --endpoint-url=http://localhost:4566 s3 ls` | Verifies bucket creation    |
-| 🧹 Clean            | `terraform destroy`                              | Deletes resources           |
+| Step             | Command                                          | What It Does                |
+| ---------------- | ------------------------------------------------ | --------------------------- |
+| Start LocalStack | `localstack start`                               | Launches local AWS emulator |
+| Init Terraform   | `terraform init`                                 | Downloads providers         |
+| Plan             | `terraform plan`                                 | Previews changes            |
+| Apply            | `terraform apply`                                | Creates resources           |
+| Test             | `aws --endpoint-url=http://localhost:4566 s3 ls` | Verifies bucket creation    |
+| Clean            | `terraform destroy`                              | Deletes resources           |
 
 ---
 
-## 🪶 Next Steps
+## Next Steps
 
 Once comfortable:
 
